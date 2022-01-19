@@ -1,0 +1,38 @@
+@import "../helper/mixins";
+@import "../helper/variables";
+
+.login {
+  @include flex_item;
+  height: 100vh;
+
+  &__telegram {
+    @include flex_item(space-between);
+    flex-direction: column;
+    margin-top: 20px;
+
+    & > h1 {
+      color: white;
+      margin-top: 15px;
+      font-size: 3rem;
+      font-weight: 400;
+    }
+
+    & > img {
+      width: 150px;
+    }
+
+    & > .login__button {
+      margin-top: 60px;
+      color: white;
+      background-color: $main_color;
+      font-size: 1.1em !important;
+      width: 300px;
+      font-weight: 300;
+      text-transform: capitalize;
+
+      & > .login__button:hover {
+        @include hover_button(#fff, $main_color);
+      }
+    }
+  }
+}

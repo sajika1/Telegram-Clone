@@ -1,0 +1,35 @@
+
+// alignment box item 
+@mixin flex_item ($justify_content:center , $align_items:center){
+    display: flex;
+    justify-content: $justify_content;
+    align-items: $align_items;
+}
+
+// set hover propertye include background color and text color
+@mixin hover_button ($bgColor , $color) {
+    background-color: $bgColor;
+    color: $color;
+}
+
+@mixin transition($time:.5s) {
+    transition: all $time ease-in-out !important;
+}
+
+@mixin glass {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur( 8px );
+    -webkit-backdrop-filter: blur( 8px );
+}
+
+@mixin replay{
+  @include glass;
+  display: flex;
+  align-items: center;
+  font-size: .8rem;
+  width: max-content;
+  overflow: hidden;
+  gap: .4rem;
+  padding:.2rem .5rem;
+  border-radius: 33px;
+}

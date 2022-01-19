@@ -1,0 +1,74 @@
+@import '../helper/mixins';
+.message__flex{
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+.message {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: fit-content;
+
+  &__contents {
+    background-color: #ccecfc80;
+    padding: 8px 10px;
+    border-radius: 33px;
+    margin: 10px;
+    margin-right: auto;
+  }
+
+}
+
+.flex__left{
+  @include replay;
+  align-self: flex-start;
+  margin-top: 2rem;
+}
+.replay{
+  @include replay;
+  align-self: flex-end;
+  margin-top: 2rem;
+  margin-right: 25px;
+  &>p{
+    font-size: .8rem;
+    white-space: nowrap;
+    width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.message > div > p {
+  color: white;
+}
+
+.message > div > small {
+  color: #c5c5c5;
+  position: absolute;
+  font-size: x-small;
+  right: 0;
+  bottom: -5px;
+}
+
+.message__sender > div > small {
+  color: #c5c5c5;
+  position: absolute;
+  font-size: x-small;
+  left: 20px;
+  bottom: -5px;
+}
+
+.message__sender {
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.message__sender > .message__contents {
+  background-color: rgb(2, 150, 199);
+}
+
+.message__sender > .message__photo {
+  order: 1;
+  margin: 15px;
+}

@@ -1,0 +1,110 @@
+@import '../helper/mixins';
+@import '../helper/variables';
+
+.thread {
+  display: flex;
+  flex: 0.75;
+  flex-direction: column;
+  height: 100vh;
+  
+  &__header {
+    @include flex_item(space-between , center);
+    border-bottom: 1px solid rgba(190, 190, 190, 0.1);
+    align-content: center;
+  }
+  
+  &__input {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: transparent;
+    border-top: 1px solid rgb(190, 190, 190, 0.1);
+    position: relative;
+    .replay__content{
+      @include glass;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      font-size: .8rem;
+      width: 250px;
+      overflow: hidden;
+      position: absolute;
+      top: -60px;
+      padding: .3rem;
+      border-radius: 33px;
+      & > p{
+        width: 60%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .close{
+        position: absolute;
+        right: 0;
+      }
+    }
+    & > form {
+      display: flex;
+      flex: 1;
+      flex-direction: row;
+    }
+
+    & > form > input {
+      width: 85%;
+      outline-width: 0;
+      border: none;
+      border-radius: 33px;
+      background-color: transparent;
+      padding: 5px;
+      color: white;
+      &::placeholder{
+        color: #ffffffda;
+      }
+    }
+
+    &> form > button {
+      color: #fff;
+      &:hover {
+        color: $success_color;
+      }
+    }
+
+  }
+
+  &__messages {
+    flex: 1;
+    overflow: scroll;
+    padding: 0 .5rem;
+    &__box{
+      display: flex;
+    }  
+  }
+  
+}
+
+.thread__headerDetails {
+  @include flex_item;
+  color: white;
+  padding: 10px;
+ 
+  &_info {
+    margin-left: 15px;
+
+    & > h5 {
+      color: #ccccccd8;
+      font-size: small;
+      font-weight: 100;
+    }
+    
+  }
+
+}
+
+.thread__headerMoreHoriz {
+  color: white;
+  &:hover {
+    color: $success_color !important;
+  }
+
+}
+

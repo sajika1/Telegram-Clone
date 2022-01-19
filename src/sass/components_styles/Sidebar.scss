@@ -1,0 +1,84 @@
+@import '../helper/variables';
+@import '../helper/mixins';
+
+.sidebar {
+  height: 100vh;
+  display: flex;
+  flex: 0.25;
+  flex-direction: column;
+  border-right: 1px solid $border_color;
+  background-color: $main_color;
+  position: relative;
+
+  &__header {
+    height: 50px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__threads {
+    overflow: scroll;
+    flex: 1;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  &__bottom {
+    display: flex;
+    padding: 10px 20px;
+    justify-content: space-between;
+    border-top: 1px solid rgba(190, 190, 190, 0.1);
+  }
+  
+}
+
+.sidebar__search {
+  @include flex_item;
+  flex: 1;
+  background-color: $input_color;
+  color: white;
+  border-radius: 33px;
+  padding: 2px;
+}
+
+.sidebar__input {
+  border: none;
+  background-color: transparent;
+  outline-width: 0;
+  color: white;
+  flex: 1;
+  padding: 6px;
+}
+
+.sidebar__input::placeholder{
+  color: #fff;
+}
+
+.sidebar__searchIcon {
+  padding-left: 5px;
+}
+
+#sidebar__button {
+  color: white !important;
+  @include transition;
+}
+#sidebar__button:hover{
+  color: $success_color !important;
+}
+
+.sidebar__bottom_avatar:hover {
+  cursor: pointer;
+}
+
+.sidebar__bottom > .MuiIconButton-root {
+  color: white !important;
+  @include transition(.3s)
+}
+
+.sidebar__bottom > .MuiIconButton-root:hover {
+  color: $success_color !important;
+}
+.sidebar__bottom > .MuiIconButton-root:last-child:hover{
+  color: $danger_color !important;
+}
